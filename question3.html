@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded' , function() {
+            var arr=[188,190,59,55,54,52];
+            var inp=document.getElementById('inputdata');
+            inp.addEventListener('keydown',function(event){
+                if (arr.indexOf(event.keyCode)!=-1 ) event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+input :
+<input id="inputdata" type="text" placeholder="Enter your data..."/>
+except <>;&^$ characters
+</body>
+</html>

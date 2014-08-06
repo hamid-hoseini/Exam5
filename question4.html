@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .circle{
+            width:3em;
+            height:3em ;
+            background-color: coral;
+            border-radius: 1.5em;
+            border: 1px solid burlywood;
+            display: block;
+            float: left;
+            cursor: pointer;
+            margin: .25em;
+        }
+        .rectangle{
+            width:3em;
+            height:3em ;
+            background-color: darkseagreen;
+            border: 1px solid aqua;
+            display: block;
+            float: left;
+            cursor: pointer;
+            margin: .25em;
+        }
+        .ellipse{
+            width:4em;
+            height:3em ;
+            background-color: burlywood;
+            border: 1px solid darkgoldenrod;
+            border-radius: 4em/3em;
+            display: block;
+            float: left;
+            cursor: pointer;
+            margin: .25em;
+        }
+        .clicked{
+            background-color: darkgray;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded' , function() {
+            var selected=false;
+            var circle=document.getElementsByClassName('circle')[0];
+            var rectangle=document.getElementsByClassName('rectangle')[0];
+            var ellipse=document.getElementsByClassName('ellipse')[0];
+            var span=document.getElementsByTagName('span')[0];
+            circle.addEventListener('mousedown', function () {
+                circle.className='circle clicked';
+                rectangle.className='rectangle';
+                ellipse.className='ellipse';
+                span.innerHTML='Circle selected...';
+                if (selected){ selected=false;
+                    circle.className='circle';
+                    span.innerHTML='';
+                } else {selected=true;}
+            });
+            rectangle.addEventListener('mousedown', function () {
+                rectangle.className='rectangle clicked';
+                circle.className='circle';
+                ellipse.className='ellipse';
+                span.innerHTML='Rectangle selected...';
+
+                if (selected){ selected=false;
+                    rectangle.className='rectangle';
+                    span.innerHTML='';
+                } else {selected=true;}
+
+            });
+            ellipse.addEventListener('mousedown', function () {
+                ellipse.className='ellipse clicked';
+                circle.className='circle';
+                rectangle.className='rectangle'
+                span.innerHTML='Ellipse selected...';
+                if (selected){ selected=false;
+                    ellipse.className='ellipse';
+                    span.innerHTML='';
+                } else {selected=true;}
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <span></span>
+    <div class="circle"></div>
+    <div class="rectangle"></div>
+    <div class="ellipse"></div>
+
+</div>
+</body>
+</html>

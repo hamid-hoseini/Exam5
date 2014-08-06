@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded' , function(){
+            var xhr=new XMLHttpRequest();
+            var names=[];
+            xhr.open('GET','http://restcountries.eu/rest/v1');
+            xhr.onreadystatechange = function(){
+                if (xhr.status===200 && xhr.readyState===4){
+                    //console.log(xhr.responseText);
+                    var obj=JSON.parse(xhr.responseText);
+
+                    var tbl=document.createElement('table');
+                    tbl.setAttribute("border","1");
+                    var tr=document.createElement('tr');
+                    var div=document.getElementById('container');
+
+                    div.appendChild(tbl);
+                        var data=obj[0];
+                        for (var ob in data){
+
+                            //console.log(ob);
+                            //console.log(data[ob]);
+                            var td=document.createElement('td');
+                            td.innerHTML=ob;
+                            tr.appendChild(td);
+                        }
+
+                    tbl.appendChild(tr);
+
+                    obj.forEach(function(data){
+                        var tr=document.createElement('tr');
+                        for (var ob in data){
+                            var td=document.createElement('td');
+                            td.innerHTML=data[ob];
+                            tr.appendChild(td);
+                            tbl.appendChild(tr);
+                        }
+                    });
+                    div.appendChild(tbl);
+                }
+            };
+            xhr.send();
+
+        });
+    </script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>
