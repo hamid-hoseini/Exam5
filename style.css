@@ -1,0 +1,51 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.circle{
+    width:3em;
+    height:3em ;
+    background-color: #d9d9d9;
+    border-radius: 1.5em;
+    border: 1px solid #000;
+    display: block;
+    float: left;
+    cursor: pointer;
+    margin: .25em;
+}
+.rectangle{
+    width:3em;
+    height:3em ;
+    background-color: #d9d9d9;
+    border: 1px solid #000;
+    display: block;
+    float: left;
+    cursor: pointer;
+    margin: .25em;
+}
+.ellipse{
+    width:4em;
+    height:3em ;
+    background-color: #d9d9d9;
+    border: 1px solid #000;
+    border-radius: 4em/3em;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    margin: .25em;
+}
+.draw{
+    width:100%;
+    height: 100%;
+    border: 1px solid #000;
+    position: relative;
+}
+.tools{
+    position: relative;
+    display: inline-block;
+}
+.clicked{
+    background-color: #9e9e9e;
+}
